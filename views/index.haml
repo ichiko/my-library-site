@@ -1,0 +1,37 @@
+- @shrink = true
+
+.jumbotron
+	%h1.hidden-phone
+		= @site_name
+	%p
+		もっと夢を語ってもいいと思うんだ。
+
+.panel.panel-primary
+	.panel-heading 新着
+	.panel-body
+		.row
+			.col-sm-6
+				%h3 詩
+				= haml :'shared/poem-list'
+				.remainder
+					%a{ :href=>'/poem.html' } もっと見る...
+.row
+	.col-md-4
+		.panel.panel-default
+			.panel-heading 更新履歴
+			.panel-body
+				%ul
+					= haml :"shared/update-log"
+	.col-md-4
+		.panel.panel-default
+			.panel-heading リンク
+			.panel-body
+				= haml :"shared/link-list"
+	.col-md-4
+		.panel.panel-default
+			.panel-heading About Me
+			.panel-boddy
+				.aboutme
+					%p ichiko@github.com
+					%p このサイトは、github.com/ichiko/my-library-site で公開されているアプリケーション開発セットです。プロジェクトの使い方は、README.mdを参照してください。
+

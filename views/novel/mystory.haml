@@ -1,0 +1,8 @@
+- @path_prefix = '/novel/mystory/'
+- @list = Novel.list('books/novel/mystory/')
+
+= haml :"shared/link-line"
+
+%p
+  章内で複数ページに渡っている場合などは、目次を工夫してください。
+  章ごとに別のフォルダにすれば、各章のデータをNovel.listで取得し、出力で工夫することが可能です。

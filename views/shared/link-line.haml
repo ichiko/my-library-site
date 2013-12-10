@@ -1,0 +1,9 @@
+-# need @list, @path_prefix
+
+= @list[0].title
+.link-line
+  - @list.each do |page|
+    - if @list[0] != page
+      = " / "
+    %a{ :href => "#{ @path_prefix }#{ page.file_name }.html" }
+      = page.id

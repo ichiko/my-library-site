@@ -1,0 +1,33 @@
+{
+	"name": "minazuki",
+	"tree": [
+		"index.html",
+		"poem.html",
+		{
+			"poem": [
+				"p001.html"
+			]
+		},
+		"novel.html",
+		{
+			"novel": [
+				{
+					"shortstories": [
+						"ss_ituka.html",
+						"ss_koremade.html"
+					],
+					"mystory": [
+						"01_01.html",
+						"01_02.html",
+						"02_01.html"
+					]
+				}
+			]
+		},
+		{
+			"stylesheets": [
+				"main.css"
+			]
+		}
+	]
+}

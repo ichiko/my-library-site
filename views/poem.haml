@@ -1,0 +1,30 @@
+- @title = @book.title
+
+.bookrest
+
+  .page-header
+    %h1
+      = @title
+
+  .book-body
+    = poemdown @book.body
+
+  .book-after
+    = poemdown @book.afterword
+
+  .book-info
+    = @book.updated_at.join(",")
+
+  .book-footer
+    %ul.pager
+      - disable = @book.previous_link.nil? ? 'disabled' : ''
+      %li.previous{ :class => disable }
+        %a{ :href => @book.previous_link.nil? ? '#' : "#{ @book.previous_link }.html" }
+          %span.glyphicon.glyphicon-chevron-left
+          Back
+
+      - disable = @book.next_link.nil? ? 'disabled' : ''
+      %li.next{ :class => disable }
+        %a{ :href => @book.next_link.nil? ? '#' : "#{ @book.next_link }.html" }
+          Next
+          %span.glyphicon.glyphicon-chevron-right

@@ -1,0 +1,23 @@
+- POEM_DIR = 'books/poem/'
+- POEM_PREFIX = '/poem/'
+
+- if @shrink.nil?
+  -# 全件表示時
+  .row
+    - list = Poem.list(POEM_DIR)
+    %ol{ :start => list[0].id }
+      - nc = list.size / 3 + 1
+      - list.each_slice(nc) do |book_list|
+        .col-sm-4
+          - book_list.each do |book|
+            %li
+              %a{ :href => "#{ POEM_PREFIX }#{ book.file_name }.html"}
+                = book.title
+- else
+  -# 新着
+  - list = Poem.arrival(POEM_DIR, 4)
+  %ol{ :start => list[0].id, :reversed => 'reversed' }
+    - list.each do |book|
+      %li
+        %a{ :href => "#{ POEM_PREFIX }#{ book.file_name }.html"}
+          = book.title

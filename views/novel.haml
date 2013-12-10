@@ -1,0 +1,40 @@
+- @title = @book.title
+- @subtitle = @book.subtitle
+- @page_num = @book.id
+
+.bookrest
+
+  .page-header
+    %h1
+      - if @subtitle.empty?
+        = @title
+      - else
+        = @subtitle
+        %small
+          = @title
+
+  .book-body
+    - if @book.id > 0
+      %h2
+        = @book.id
+    = markdown @book.body
+
+  .book-after
+    = markdown @book.afterword
+
+  .book-info
+    = @book.updated_at.join(",")
+
+  .book-footer
+    %ul.pager
+      - disable = @book.previous_link.nil? ? 'disabled' : ''
+      %li.previous{ :class => disable }
+        %a{ :href => @book.previous_link.nil? ? '#' : "#{ @book.previous_link }.html" }
+          %span.glyphicon.glyphicon-chevron-left
+          Back
+
+      - disable = @book.next_link.nil? ? 'disabled' : ''
+      %li.next{ :class => disable }
+        %a{ :href => @book.next_link.nil? ? '#' : "#{ @book.next_link }.html" }
+          Next
+          %span.glyphicon.glyphicon-chevron-right

@@ -1,0 +1,50 @@
+!!! 5
+%html
+  %head
+  %meta{ :charset=>'utf-8' }
+  %meta{ :name=>"viewport", :content=>"width=device-width, initial-scale=1.0" }
+  %title
+    - unless @title.nil?
+      = @title
+      = '|'
+    - unless @category.nil?
+      = @category
+      = '|'
+    = @site_name
+
+  %link{ :rel=>'stylesheet', :type=>'text/css', :href=>'/lib/bootstrap/bootstrap.min.css' }
+  %link{ :rel=>'stylesheet', :type=>'text/css', :href=>'/stylesheets/main.css' }
+
+  %script{ :src=>'/lib/jquery/jquery.min.js' }
+  %script{ :src=>'/lib/bootstrap/bootstrap.min.js' }
+
+  %body
+    = haml :"shared/access-logger"
+    .container
+      .navbar.navbar-default{ :role=>'navigation' }
+        .navbar-header
+          %button.navbar-toggle{ :type=>'button', 'data-toggle'=>'collapse', 'data-target'=>'#minazuki-navbar'}
+            %span.sr-only
+              Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand{ :href=>'/index.html' }
+            = @site_name
+        .collapse.navbar-collapse#minazuki-navbar
+          %ul.nav.navbar-nav
+            - li_class = @category_id == 'poem' ? 'active' : ''
+            %li#prose{ :class=>"#{li_class}" }
+              %a{ :href=>'/poem.html'}
+                詩
+            - li_class = @category_id == 'novel' ? 'active' : ''
+            %li#novel{ :class=>"#{li_class}"}
+              %a{ :href=>'/novel.html'}
+                小説
+            - li_class = @category_id == 'mail' ? 'active' : ''
+            %li#mail{ :class=>"#{li_class}" }
+              %a{ :href=>'#' }
+                メール
+      = yield
+      .footer
+        = "#{@site_name} (c) 2002-2013 ichiko@github.com"

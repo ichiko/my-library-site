@@ -1,0 +1,68 @@
+@import 'values.scss';
+
+body {
+	background-color: $background_wall_color;
+}
+
+.navbar-default {
+	background-color: $navigation_background;
+}
+
+.container .remainder {
+	margin-left: auto;
+	margin-right: 20px;
+	text-align: right;
+}
+
+.container .aboutme {
+	padding: 10px 15px 10px 15px;
+}
+
+.container .contents-table {
+	margin: 15px 10px 25px 10px;
+}
+
+.container .contents-table .link-line {
+	display: inline;
+	margin-left: 20px;
+}
+
+.container .footer {
+	padding-top: 19px;
+	color: #777;
+	border-top: 1px solid #e5e5e5;
+}
+
+.container .bookrest {
+	padding: 10px 20px 10px 20px;
+}
+
+.container .bookrest .book-body {
+
+}
+
+.container .bookrest .book-body blockquote {
+	border: none;
+	padding: 10px 40px;
+}
+
+.container .bookrest .book-body blockquote p {
+	font-size: 14px;
+}
+
+.container .bookrest .book-body h2 {
+	margin-left: 30px;
+	font-size: 24px;
+}
+
+.container .bookrest .book-after {
+	margin-top: 40px;
+	padding-top: 19px;
+	color: #777;
+	border-top: 1px solid #e5e5e5;
+}
+
+.container .bookrest .book-info {
+	color: #777;
+	margin-bottom: 20px;
+}

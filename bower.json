@@ -1,0 +1,22 @@
+{
+  "name": "minazuki",
+  "version": "0.1",
+  "authors": [
+    "ichiko <ichigo_sky@hotmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "jquery": "~2.0.3",
+    "bootstrap": "~3.0.2"
+  },
+  "exportsOverride": {
+    "bootstrap": {
+      "/" : ["dist/js/bootstrap.min.js", "dist/css/bootstrap.min.css"],
+      "../fonts/": "dist/fonts/*"
+    },
+    "jquery": {
+      "/" : "jquery.min.js"
+    }
+  }
+}

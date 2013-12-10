@@ -1,0 +1,17 @@
+- SHORT_NOVEL_DIR = 'books/novel/shortstories/'
+- SHORT_NOVEL_PREVIX = '/novel/shortstories/'
+
+- ss_list = Novel.list(SHORT_NOVEL_DIR)
+
+%h2 短編
+
+%ol
+  - ss_list.each do |book|
+    %li
+      %a{ :href => "#{ SHORT_NOVEL_PREVIX }#{ book.file_name }.html"}
+        = book.title
+  %li
+    = haml :"novel/mystory"
+
+
+%h2 長編

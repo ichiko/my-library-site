@@ -1,0 +1,11 @@
+#.gitignore
+.DS_Store
+.bundle/
+.sass-cache/
+vendor/
+node_modules/
+bower_components/
+static/
+public/lib
+Gemfile.lock
+Rakefile
